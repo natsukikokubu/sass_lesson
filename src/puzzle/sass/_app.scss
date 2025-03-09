@@ -1,0 +1,93 @@
+@use 'variable';
+$header_box_list: box1, box2,box3;
+$box_width: 40px, 40px, 40px;
+$box_height: 40px, 40px, 40px;
+
+
+
+.header{
+  width: 400px;
+  height: 100px;
+  background-color: variable.$navy;
+  display: flex;
+  justify-content: end;
+
+    &__list{
+      display: flex;
+      margin-top: 20px;
+      margin-right: 20px;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      background-color: #fff;
+      width: 160px;
+      height: 60px;
+
+        & > li {
+          @each $item in $header_box_list {
+            $index_key: index($header_box_list, $item);
+
+          &.#{$item} {
+            a {
+              display: inline-block;
+              width: nth($box_width, $index_key);
+              height: nth($box_height, $index_key);
+              background-color: nth(variable.$buttonColor, $index_key);
+            }
+          }
+          }
+        }
+    }
+
+}
+
+
+
+.container{
+  display: flex;
+}
+
+.sidebar{
+  height: 250px;
+  width: 150px;
+  background-color:#80bfa8;
+}
+
+
+$main_box_list: main__box1, main__box2, main__box3;
+$box_width: 140px, 140px, 140px;
+$box_height: 40px, 40px, 40px;
+
+.main{
+  height: 250px;
+  width: 250px;
+  background-color: #8c2727;
+
+    &__box{
+    display: block;
+    margin-top: 40px;
+    margin-left: 40px;
+
+
+      & > li {
+        @each $item in $main_box_list {
+          $index_key: index($main_box_list, $item);
+
+          &.#{$item} {
+            width: nth($box_width, $index_key);
+            height: nth($box_height, $index_key);
+            background-color: nth(variable.$buttonColor, $index_key);
+            border: #fff solid 5px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+
+.footer{
+height: 100px;
+width: 400px;
+background-color: #d98d30;
+}
