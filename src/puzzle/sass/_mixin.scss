@@ -1,0 +1,9 @@
+@mixin height(){
+height: 250px;
+}
+
+@mixin container($color){
+height: 100px;
+width: 400px;
+background-color: $color;
+}

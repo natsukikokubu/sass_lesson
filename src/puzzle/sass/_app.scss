@@ -6,9 +6,7 @@ $box_height: 40px, 40px, 40px;
 
 
 .header{
-  width: 400px;
-  height: 100px;
-  background-color: variable.$navy;
+  @include container(variable.$navy);
   display: flex;
   justify-content: end;
 
@@ -48,7 +46,7 @@ $box_height: 40px, 40px, 40px;
 }
 
 .sidebar{
-  height: 250px;
+  @include height;
   width: 150px;
   background-color:#80bfa8;
 }
@@ -59,7 +57,7 @@ $box_width: 140px, 140px, 140px;
 $box_height: 40px, 40px, 40px;
 
 .main{
-  height: 250px;
+  @include height;
   width: 250px;
   background-color: #8c2727;
 
@@ -87,7 +85,5 @@ $box_height: 40px, 40px, 40px;
 
 
 .footer{
-height: 100px;
-width: 400px;
-background-color: #d98d30;
+@include container(variable.$brown);
 }
