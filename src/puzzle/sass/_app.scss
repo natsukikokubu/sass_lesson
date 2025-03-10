@@ -17,7 +17,7 @@ $box_height: 40px, 40px, 40px;
       align-items: center;
       gap: 10px;
       justify-content: center;
-      background-color: #fff;
+      background-color: variable.$white;
       width: 160px;
       height: 60px;
 
@@ -48,7 +48,7 @@ $box_height: 40px, 40px, 40px;
 .sidebar{
   @include height;
   width: 150px;
-  background-color:#80bfa8;
+  background-color: variable.$green;
 }
 
 
@@ -59,7 +59,7 @@ $box_height: 40px, 40px, 40px;
 .main{
   @include height;
   width: 250px;
-  background-color: #8c2727;
+  background-color: variable.$red;
 
     &__box{
     display: block;
@@ -75,7 +75,7 @@ $box_height: 40px, 40px, 40px;
             width: nth($box_width, $index_key);
             height: nth($box_height, $index_key);
             background-color: nth(variable.$buttonColor, $index_key);
-            border: #fff solid 5px;
+            border: variable.$white solid 5px;
             margin-bottom: 10px;
           }
         }
