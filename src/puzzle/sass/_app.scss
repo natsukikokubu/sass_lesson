@@ -1,4 +1,5 @@
 @use 'variable';
+@use 'mixin';
 $header_box_list: box1, box2,box3;
 $box_width: 40px, 40px, 40px;
 $box_height: 40px, 40px, 40px;
@@ -6,7 +7,7 @@ $box_height: 40px, 40px, 40px;
 
 
 .header{
-  @include container(variable.$navy);
+  @include mixin.container(variable.$navy);
   display: flex;
   justify-content: end;
 
@@ -46,7 +47,7 @@ $box_height: 40px, 40px, 40px;
 }
 
 .sidebar{
-  @include height;
+  @include mixin.height();
   width: 150px;
   background-color: variable.$green;
 }
@@ -57,7 +58,7 @@ $box_width: 140px, 140px, 140px;
 $box_height: 40px, 40px, 40px;
 
 .main{
-  @include height;
+  @include mixin.height();
   width: 250px;
   background-color: variable.$red;
 
@@ -85,5 +86,5 @@ $box_height: 40px, 40px, 40px;
 
 
 .footer{
-@include container(variable.$brown);
+@include mixin.container(variable.$brown);
 }
