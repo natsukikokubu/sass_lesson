@@ -1,0 +1,85 @@
+@use 'variable';
+@use 'mixin';
+
+
+
+
+.header{
+  @include mixin.container(variable.$navy);
+  display: flex;
+  justify-content: end;
+
+    &__list{
+      display: flex;
+      margin-top: 20px;
+      margin-right: 20px;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      background-color: variable.$white;
+      height: 40px;
+      padding: 10px;
+
+
+        & > li {
+          @each $item in variable.$classNames {
+            $index_key: index(variable.$classNames, $item);
+
+          &.#{$item} {
+            a {
+              display: inline-block;
+              width: 40px;
+              height: 40px;
+              background-color: nth(variable.$buttonColor, $index_key);
+              }
+            }
+          }
+        }
+    }
+
+}
+
+
+
+.container{
+  display: flex;
+}
+
+.sidebar{
+  @include mixin.height();
+  width: 150px;
+  background-color: variable.$green;
+}
+
+
+.main{
+  @include mixin.height();
+  width: 250px;
+  background-color: variable.$red;
+
+    &__box{
+    display: block;
+    margin-top: 40px;
+    margin-left: 40px;
+
+
+      & > li {
+        @each $item in variable.$classNames {
+          $index_key: index(variable.$classNames, $item);
+
+          &.#{$item} {
+            width: 140px;
+            height: 40px;
+            background-color: nth(variable.$buttonColor, $index_key);
+            border: variable.$white solid 5px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+
+.footer{
+@include mixin.container(variable.$brown);
+}
