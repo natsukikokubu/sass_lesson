@@ -1,8 +1,6 @@
 @use 'variable';
 @use 'mixin';
-$header_box_list: box1, box2,box3;
-$box_width: 40px, 40px, 40px;
-$box_height: 40px, 40px, 40px;
+
 
 
 
@@ -19,18 +17,19 @@ $box_height: 40px, 40px, 40px;
       gap: 10px;
       justify-content: center;
       background-color: variable.$white;
-      width: 160px;
-      height: 60px;
+      height: 40px;
+      padding: 10px;
+
 
         & > li {
-          @each $item in $header_box_list {
-            $index_key: index($header_box_list, $item);
+          @each $item in variable.$classNames {
+            $index_key: index(variable.$classNames, $item);
 
           &.#{$item} {
             a {
               display: inline-block;
-              width: nth($box_width, $index_key);
-              height: nth($box_height, $index_key);
+              width: 40px;
+              height: 40px;
               background-color: nth(variable.$buttonColor, $index_key);
               }
             }
@@ -53,10 +52,6 @@ $box_height: 40px, 40px, 40px;
 }
 
 
-$main_box_list: main__box1, main__box2, main__box3;
-$box_width: 140px, 140px, 140px;
-$box_height: 40px, 40px, 40px;
-
 .main{
   @include mixin.height();
   width: 250px;
@@ -69,12 +64,12 @@ $box_height: 40px, 40px, 40px;
 
 
       & > li {
-        @each $item in $main_box_list {
-          $index_key: index($main_box_list, $item);
+        @each $item in variable.$classNames {
+          $index_key: index(variable.$classNames, $item);
 
           &.#{$item} {
-            width: nth($box_width, $index_key);
-            height: nth($box_height, $index_key);
+            width: 140px;
+            height: 40px;
             background-color: nth(variable.$buttonColor, $index_key);
             border: variable.$white solid 5px;
             margin-bottom: 10px;
